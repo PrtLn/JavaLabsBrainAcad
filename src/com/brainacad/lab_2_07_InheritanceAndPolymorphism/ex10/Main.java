@@ -50,5 +50,29 @@ public class Main {
             System.out.print(shape);
             System.out.println(", area is " + shape.calcArea());
         }
+        System.out.println();
+
+        double sumArea = 0.0;
+        for (Shape shape : arr) {
+            sumArea += shape.calcArea();
+        }
+        System.out.println("Sum of all shapes area: " + sumArea);
+
+        double sumCircleArea = 0.0;
+        double sumRectArea = 0.0;
+        double sumTriangleArea = 0.0;
+        for (Shape shape : arr) {
+            if (shape instanceof Circle) {
+                sumCircleArea += shape.calcArea();
+            } else if (shape instanceof Rectangle) {
+                sumRectArea += shape.calcArea();
+            } else if (shape instanceof Triangle) {
+                sumTriangleArea += shape.calcArea();
+            }
+        }
+        System.out.println("Sum of rectangles area: " + sumRectArea);
+        System.out.println("Sum of circles area: " + sumCircleArea);
+        System.out.println("Sum of triangles area: " + sumTriangleArea);
+
     }
 }
